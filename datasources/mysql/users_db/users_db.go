@@ -16,7 +16,7 @@ func init() {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8",
 		"root",
 		"root123*-",
-		"127.0.0.1",
+		"127.0.0.1:3306",
 		"users_db",
 	)
 	var err error
@@ -27,6 +27,7 @@ func init() {
 	if err = UsersDB.Ping(); err != nil {
 		panic(err)
 	}
+
 	log.Println("database successfully configured")
 
 }
